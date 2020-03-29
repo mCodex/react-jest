@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { addTech } from '~/store/modules/techs/actions';
 
 export default () => {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ export default () => {
     // }, [techs]);
 
     const handleAddTech = () => {
-        dispatch({ type: 'ADD_TECH', payload: { tech: newTech } });
+        dispatch(addTech(newTech));
 
         setNewTech('');
     };
